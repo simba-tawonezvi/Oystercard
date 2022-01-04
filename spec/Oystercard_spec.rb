@@ -22,4 +22,8 @@ describe Oystercard do
     subject.deduct(4.25) 
     expect(subject.balance).to eq (45.75)
   end 
+
+  it 'checks weather touch in is working' do
+    expect{  subject.touch_in }.to change { subject.in_journey? }.from(false).to(true)
+  end
 end 
