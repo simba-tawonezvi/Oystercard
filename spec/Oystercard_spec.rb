@@ -28,14 +28,20 @@ describe Oystercard do
   end
 
   it 'changes the in_journey to true after touching in' do
+    subject.top_up(1)
     subject.touch_in
     expect(subject).to be_in_journey
   end 
 
   it 'changes the in_journey back to false after touvhing out' do
+    subject.top_up(1)
     subject.touch_in
     subject.touch_out
     expect(subject).not_to be_in_journey
+  end
+
+  it 'raises error when card has less than £1' do
+    expect { subject.touch_in }.to raise_error 'Insufficient balance to touch in'
   end
 
 end 
