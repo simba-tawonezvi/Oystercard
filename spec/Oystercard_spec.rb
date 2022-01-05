@@ -23,9 +23,19 @@ describe Oystercard do
     expect(subject.balance).to eq (45.75)
   end 
 
-  it 'checks weather touch in is working' do
-    expect{  subject.touch_in }.to change { subject.in_journey? }.from(false).to(true)
+  it 'checks weather passemnger in journey' do
+    expect(subject).not_to be_in_journey
   end
 
-  it 
+  it 'changes the in_journey to true after touching in' do
+    subject.touch_in
+    expect(subject).to be_in_journey
+  end 
+
+  it 'changes the in_journey back to false after touvhing out' do
+    subject.touch_in
+    subject.touch_out
+    expect(subject).not_to be_in_journey
+  end
+
 end 
