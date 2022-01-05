@@ -26,4 +26,6 @@ describe Oystercard do
   it 'checks weather touch in is working' do
     expect{  subject.touch_in }.to change { subject.in_journey? }.from(false).to(true)
   end
+
+  it 
 end 
