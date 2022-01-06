@@ -1,5 +1,5 @@
 class Oystercard  
-  attr_accessor :in_journey, :balance
+  attr_accessor :balance
 
   LIMIT = 90
   MINIMUM_FARE = 1

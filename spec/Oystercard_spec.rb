@@ -49,6 +49,11 @@ describe Oystercard do
     subject.top_up(1)
     expect { subject.touch_out }.to change { subject.balance }.by(-Oystercard::MINIMUM_FARE)
   end 
+
+  let( :station) { double :station}
+  it 'stores the entry station' do
+    subject.touch_in(station)
+  end
 end 
 
 
