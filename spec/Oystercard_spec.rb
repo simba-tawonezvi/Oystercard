@@ -17,6 +17,7 @@ describe Oystercard do
     expect {subject.top_up 1 }.to raise_error "maximum limit of #{limit} exceeded"
   end 
 
+  # REMOVED AS DEDCUT IS TESTED IN TOUCH OUT
   # it 'recuces the balance when we spend money using the method deduct' do 
   #   subject.top_up(50)
   #   subject.deduct(4.25) 
